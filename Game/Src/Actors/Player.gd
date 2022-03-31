@@ -23,10 +23,10 @@ func _physics_process(delta: float) -> void:
 	global_rotation = atan2(look_vec.y, look_vec.x)
 	
 	
+
 #Another comment, please delete me
 
-Just touching up everything that was conflicting
+#Just touching up everything that was conflicting
 
 #aaaaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 
-#This is michael whyte making a test comment
