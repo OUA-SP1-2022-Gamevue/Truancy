@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Assets/Temp/manBlue_stand.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 12.0
+radius = 9.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -20,3 +20,12 @@ __meta__ = {
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 cast_to = Vector2( 2000, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
