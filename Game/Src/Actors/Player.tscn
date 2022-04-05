@@ -4,13 +4,17 @@
 [ext_resource path="res://Game/Assets/Temp/manBlue_stand.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 9.0
+radius = 10.0499
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 6
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -20,6 +24,9 @@ __meta__ = {
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 cast_to = Vector2( 2000, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -29,3 +36,6 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
+__meta__ = {
+"_edit_lock_": true
+}
