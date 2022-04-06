@@ -5,4 +5,4 @@ extends KinematicBody2D
 class_name ActorBase
 
 var velocity = Vector2()
-export var move_speed = 200
+export var move_speed = 100
