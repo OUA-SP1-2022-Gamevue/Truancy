@@ -11,18 +11,18 @@ bg_color = Color( 0.0823529, 0.0784314, 0.0784314, 0.572549 )
 [node name="TempHUD" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="TempHUD"]
-margin_right = 128.0
-margin_bottom = 32.0
+margin_right = 117.0
+margin_bottom = 21.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="TempHUD"]
-margin_left = 9.0
-margin_top = 9.0
-margin_right = 119.0
-margin_bottom = 23.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 114.0
+margin_bottom = 18.0
 text = "Press Esc to quit."
 __meta__ = {
 "_edit_lock_": true
