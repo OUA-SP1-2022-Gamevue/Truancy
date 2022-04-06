@@ -1,16 +1,20 @@
 extends ActorBase
 
 func _physics_process(_delta: float) -> void:
+	#keeps the cursor inside the game windoww
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
+	#call made to input movements from func below
 	_get_dir()
 	velocity = move_and_slide(velocity,Vector2(0,1))
 	velocity.x = lerp(velocity.x,0,0.2)
 	velocity.y = lerp(velocity.y,0,0.2)
 	
+	#this code block is for the player to face the direction that the cursor is in
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
 	
+	#press escape to exit game
 	if Input.is_action_just_pressed("temp_close"):
 		_close_game()
 
