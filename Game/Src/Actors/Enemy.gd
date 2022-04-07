@@ -25,15 +25,19 @@ func _physics_process(delta):
 func _get_dir():
 	if direction == 1:
 		$Sprite.rotation_degrees = 90
+		$VisionCone.rotation_degrees = 90
 		velocity.y = move_speed
 	elif direction == 2:
 		$Sprite.rotation_degrees = 270
+		$VisionCone.rotation_degrees = 270
 		velocity.y = -move_speed
 	elif direction == 3:
 		$Sprite.rotation_degrees = 0
+		$VisionCone.rotation_degrees = 0
 		velocity.x = move_speed
 	elif direction == 4:
 		$Sprite.rotation_degrees = 180
+		$VisionCone.rotation_degrees = 180
 		velocity.x = -move_speed
 		
 func _get_flip():
@@ -46,6 +50,7 @@ func _get_flip():
 	elif direction == 4:
 		direction = 3
 	$Sprite.rotation_degrees -= 180
+	$VisionCone.rotation_degrees -= 180
 
 func _on_Area2D_body_entered(body):
 	if body.name == "TileMap" or body.get_collision_layer() == 2 or body.get_collision_layer() == 1:

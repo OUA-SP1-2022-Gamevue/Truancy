@@ -31,3 +31,7 @@ func _get_dir():
 
 func _close_game():
 	get_tree().quit()
+
+
+func _on_EnemyDetect_area_entered(area: Area2D) -> void:
+	get_tree().reload_current_scene()
