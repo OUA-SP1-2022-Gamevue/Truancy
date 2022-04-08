@@ -41,11 +41,11 @@ move_speed = 120
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 237, 67 )
+position = Vector2( 237, 35 )
 direction = 2
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 237, 21 )
+position = Vector2( 237, 131 )
 direction = 1
 stray = 100
 

@@ -30,10 +30,12 @@ shape = SubResource( 3 )
 [node name="VisionCone" type="Area2D" parent="."]
 
 [node name="VCone" type="Sprite" parent="VisionCone"]
-position = Vector2( 39, 0 )
+show_behind_parent = true
+position = Vector2( 33, 0 )
 texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
-polygon = PoolVector2Array( 58, -21, 62, -12, 64, 0, 62, 12, 59, 23, -8, 0 )
+polygon = PoolVector2Array( 52, -20, 55, -13, 57, -1, 56, 14, 53, 23, -7, 0 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="VisionCone" to="." method="_on_VisionCone_body_entered"]
