@@ -1,4 +1,4 @@
-extends ActorBase
+extends ActorBase #Actor.gd
 
 func _physics_process(_delta: float) -> void:
 	#keeps the cursor inside the game windoww
@@ -29,9 +29,9 @@ func _get_dir():
 	elif Input.is_action_pressed("move_up") and !Input.is_action_pressed("move_down"):
 		velocity.y = -move_speed
 
+#just resetting the game for now
+func lose_game():
+	get_tree().reload_current_scene()
+
 func _close_game():
 	get_tree().quit()
-
-
-func _on_EnemyDetect_area_entered(area: Area2D) -> void:
-	get_tree().reload_current_scene()
