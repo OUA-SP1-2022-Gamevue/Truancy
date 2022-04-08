@@ -22,12 +22,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-cast_to = Vector2( 2000, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 drag_margin_h_enabled = true

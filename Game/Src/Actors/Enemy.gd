@@ -11,7 +11,6 @@ func _ready():
 	_get_velocity()
 		
 func _physics_process(_delta: float) -> void:
-	_get_velocity()
 	
 	#Code block calls the flip direction function whenever the enemy is 
 	#'stray' pixels from their origin.
@@ -23,7 +22,7 @@ func _physics_process(_delta: float) -> void:
 		_flip_direction()
 	elif origin.x >= position.x+stray:
 		_flip_direction()
-	
+	_get_velocity()
 	move_and_slide(velocity)
 
 #This function will set the velocity and rotation of the enemy to their appropriate

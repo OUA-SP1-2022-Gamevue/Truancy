@@ -45,7 +45,7 @@ position = Vector2( 237, 35 )
 direction = 2
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 237, 131 )
+position = Vector2( 357, 21 )
 direction = 1
 stray = 100
 
@@ -53,7 +53,6 @@ stray = 100
 position = Vector2( 314, 264 )
 move_speed = 50
 direction = 3
-stray = 100
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 147, 197 )
