@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game/Src/Actors/Player.gd" type="Script" id=1]
-[ext_resource path="res://Game/Assets/Temp/manBlue_stand.png" type="Texture" id=2]
+[ext_resource path="res://Game/Assets/Temp/tilesheet_transparent.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 10.0499
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.0
+height = 4.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 6
@@ -12,9 +13,8 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+region_enabled = true
+region_rect = Rect2( 479, 19, 8, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -30,6 +30,7 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
+editor_draw_screen = false
 __meta__ = {
 "_edit_lock_": true
 }
