@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall01.png-b568f62d8b1b60e1aa42e8b00b708d10.stex"
+path="res://.import/Void.png-eb767944c68ab2468e4fe99ec88a7ddd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Temp/wall01.png"
-dest_files=[ "res://.import/wall01.png-b568f62d8b1b60e1aa42e8b00b708d10.stex" ]
+source_file="res://Game/Assets/Temp/Void.png"
+dest_files=[ "res://.import/Void.png-eb767944c68ab2468e4fe99ec88a7ddd.stex" ]
 
 [params]
 
@@ -20,16 +20,16 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
