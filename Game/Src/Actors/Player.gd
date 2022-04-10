@@ -1,33 +1,42 @@
-extends ActorBase #Actor.gd
+extends KinematicBody2D
+class_name Player
+
+
+export var speed := 150
+
+
+onready var sprite = $Sprite
+
+
+func _ready():
+	#Keeps the cursor inside the game window.
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _physics_process(_delta: float) -> void:
-	#keeps the cursor inside the game windoww
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	#Reset the movement_direction vector.
+	var movement_direction := Vector2.ZERO
+	#This code block updates the movement_direction Vector based on the user's input.
+	if Input.is_action_pressed("move_up"):
+		movement_direction.y -= 1
+	if Input.is_action_pressed("move_down"):
+		movement_direction.y += 1
+	if Input.is_action_pressed("move_left"):
+		movement_direction.x -= 1
+	if Input.is_action_pressed("move_right"):
+		movement_direction.x += 1
+	#Normalizes the Vector so the player doesn't move faster diagonally.
+	movement_direction = movement_direction.normalized()
+	#Inbuilt method that moves the player.
+	move_and_slide(speed * movement_direction)
 	
-	#call made to input movements from func below
-	_get_dir()
-	velocity = move_and_slide(velocity)
-	velocity.x = lerp(velocity.x,0,0.2)
-	velocity.y = lerp(velocity.y,0,0.2)
-	
-	#this code block is for the player to face the direction that the cursor is in
-	var look_vec = get_global_mouse_position() - global_position
-	global_rotation = atan2(look_vec.y, look_vec.x)
-	
+	#This rotates the sprite at the value of the mouse's position
+	sprite.look_at(get_global_mouse_position())
+
+
+func _unhandled_input(event: InputEvent) -> void:
 	#press escape to exit game
 	if Input.is_action_just_pressed("temp_close"):
 		_close_game()
-
-#Making this function as we might be able to set up cutscenes later to use it.
-func _get_dir():
-	if Input.is_action_pressed("move_right") and !Input.is_action_pressed("move_left"):
-		velocity.x = move_speed
-	elif Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
-		velocity.x = -move_speed
-	if Input.is_action_pressed("move_down") and !Input.is_action_pressed("move_up"):
-		velocity.y = move_speed
-	elif Input.is_action_pressed("move_up") and !Input.is_action_pressed("move_down"):
-		velocity.y = -move_speed
 
 #just resetting the game for now
 func lose_game():

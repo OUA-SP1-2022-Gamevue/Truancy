@@ -21,50 +21,44 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -6
 tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 3, 0, 0, 4, 1, 0, 131096, 0, 0, 131097, 0, 0, 131098, 1, 0, 196616, 1, 0, 196617, 0, 0, 196618, 0, 0, 196626, 1, 0, 196627, 0, 0, 196628, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 262152, 1, 0, 262153, 0, 0, 262154, 1, 0, 262162, 1, 0, 262163, 0, 0, 262164, 0, 0, 262168, 1, 0, 262169, 0, 0, 262170, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 1, 0, 327704, 1, 0, 327705, 1, 0, 327706, 1, 0, 393220, 1, 0, 393221, 1, 0, 393234, 1, 0, 393235, 0, 0, 393236, 1, 0, 458756, 1, 0, 458757, 1, 0, 851968, 0, 0, 851969, 1, 0, 917505, 0, 0, 917506, 1, 0, 983041, 0, 0, 983042, 1, 0, 1048578, 1, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 1, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 1, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 1, 0, 1245224, 1, 0, 1245225, 1, 0, 1245226, 1, 0, 1310760, 0, 0, 1310761, 0, 0, 1310762, 0, 0, 1376297, 0, 0, 1376298, 1, 0, 1441833, 0, 0, 1441834, 0, 0, 1507359, 1, 0, 1507369, 0, 0, 1507370, 0, 0, 1638440, 0, 0, 1638441, 1, 0, 1703975, 0, 0, 1703976, 0, 0, 1703977, 1, 0, 1769511, 0, 0, 1769512, 0, 0, 1966097, 1, 0, 1966098, 1, 0, 1966099, 0, 0, 1966100, 0, 0, 1966101, 0, 0, 2031634, 1, 0, 2031635, 1, 0, 2031636, 0, 0, 2031637, 0, 0, 2097169, 0, 0, 2097170, 0, 0, 2097171, 0, 0, 2097187, 0, 0, 2097188, 1, 0, 2097189, 0, 0, 2162723, 0, 0, 2162724, 1, 0, 2162725, 0, 0, 2228259, 0, 0, 2228260, 0, 0, 2228261, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 55, 32 )
-move_speed = 120
+position = Vector2( 467, 175 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 233, 92 )
-move_speed = 70
+position = Vector2( 199, 63 )
 direction = 2
+state = 1
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 371, 245 )
-direction = 1
-stray = 100
+position = Vector2( 365, 238 )
+direction = 2
+state = 1
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 587, 371 )
-move_speed = 50
 direction = 3
-stray = 50
+state = 1
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 156, 232 )
-move_speed = 60
-direction = 4
+direction = 3
+state = 1
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 527, 486 )
-move_speed = 40
-direction = 1
-stray = 600
+position = Vector2( 532, 480 )
+state = 1
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 367, 148 )
+position = Vector2( 265, 63 )
 direction = 3
+state = 1
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 491, 124 )
-move_speed = 200
-direction = 2
+position = Vector2( 543, 175 )
+direction = 1
 
 [node name="TempHUD" type="CanvasLayer" parent="."]
-scale = Vector2( 0.5, 0.5 )
-transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
 
 [node name="Panel" type="Panel" parent="TempHUD"]
 margin_right = 117.0
