@@ -14,6 +14,7 @@ onready var ai = $AI
 
 
 func _ready():
+	set_physics_process(false)
 	#Turns on the vision cone's visibility, allowing it to be turned off in the editor.
 	vision_cone.visible = true 
 	#calls the intialise function of the AI node using itself as the parameter.
