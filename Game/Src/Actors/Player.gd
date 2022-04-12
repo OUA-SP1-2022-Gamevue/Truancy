@@ -8,10 +8,6 @@ export var speed := 150
 onready var sprite = $Sprite
 
 
-func _ready():
-	#Keeps the cursor inside the game window.
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-
 func _physics_process(_delta: float) -> void:
 	#Reset the movement_direction vector.
 	var movement_direction := Vector2.ZERO
@@ -32,11 +28,6 @@ func _physics_process(_delta: float) -> void:
 	#This rotates the sprite at the value of the mouse's position
 	sprite.look_at(get_global_mouse_position())
 
-
-func _unhandled_input(event: InputEvent) -> void:
-	#press escape to exit game
-	if Input.is_action_just_pressed("temp_close"):
-		_close_game()
 
 #just resetting the game for now
 func lose_game():
