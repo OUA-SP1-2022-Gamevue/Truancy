@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Game/Assets/Temp/DefaultTheme.tres" type="Theme" id=1]
-[ext_resource path="res://Game/Src/UserInterface/UserInterface.gd" type="Script" id=2]
-[ext_resource path="res://Game/Src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Src/UserInterface/RetryButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game/Src/UserInterface/QuitButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/assets/temp/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://game/src/user_interface/UserInterface.gd" type="Script" id=2]
+[ext_resource path="res://game/src/user_interface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/src/user_interface/RetryButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/src/user_interface/QuitButton.tscn" type="PackedScene" id=5]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2

@@ -9,17 +9,23 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "AI",
+"language": "GDScript",
+"path": "res://game/src/actors/AI.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Game/Src/Actors/Enemy.gd"
+"path": "res://game/src/actors/Enemy.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Game/Src/Actors/Player.gd"
+"path": "res://game/src/actors/Player.gd"
 } ]
 _global_script_class_icons={
+"AI": "",
 "Enemy": "",
 "Player": ""
 }
@@ -27,13 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Truancy"
-run/main_scene="res://Game/Src/Screens/MainMenu.tscn"
+run/main_scene="res://game/src/screens/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=480
-window/size/height=270
+window/size/width=384
+window/size/height=216
 window/size/test_width=1440
 window/size/test_height=810
 window/stretch/mode="2d"
@@ -70,6 +76,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]
@@ -116,5 +126,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"

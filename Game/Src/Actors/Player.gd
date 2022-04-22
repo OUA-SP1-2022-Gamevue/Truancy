@@ -1,11 +1,13 @@
-extends KinematicBody2D
 class_name Player
+extends KinematicBody2D
 
 
-export var speed := 120
+export var speed := 128
 
-onready var sprite = $Sprite
-onready var footstep_player = $FootstepAudioPlayer
+
+onready var sprite: = $Sprite
+onready var footstep_player: = $FootstepAudioPlayer
+onready var player_transform: = $PlayerTransform
 
 
 func _physics_process(_delta: float) -> void:
@@ -40,6 +42,9 @@ func _physics_process(_delta: float) -> void:
 	elif velocity == Vector2.ZERO:
 		footstep_player.stop()
 
+
+func set_to_player_transform(transform_path: NodePath):
+	player_transform.remote_path = transform_path
 
 #just resetting the game for now
 func lose_game():
