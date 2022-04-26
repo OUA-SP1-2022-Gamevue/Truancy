@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Game/Src/UserInterface/RetryButton.gd" type="Script" id=1]
+[ext_resource path="res://game/src/user_interface/RetryButton.gd" type="Script" id=1]
 
 [node name="RetryButton" type="Button"]
 text = "Retry Level"

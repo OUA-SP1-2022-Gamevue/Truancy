@@ -1,11 +1,11 @@
 extends Control
 
 
+var pause: = false setget set_pause
+
+
 onready var scene_tree: = get_tree()
 onready var pause_overlay: = $PauseOverlay
-
-
-var pause: = false setget set_pause
 
 
 func _ready() -> void:
@@ -17,6 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		self.pause = !pause
 		scene_tree.set_input_as_handled()
+
 
 func set_pause(value: bool) -> void:
 	pause = value

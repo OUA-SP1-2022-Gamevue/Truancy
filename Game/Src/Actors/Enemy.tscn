@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game/Assets/Temp/tilesheet_transparent.png" type="Texture" id=1]
-[ext_resource path="res://Game/Src/Actors/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Game/Assets/Temp/cone.png" type="Texture" id=3]
-[ext_resource path="res://Game/Src/Actors/VisionCone.gd" type="Script" id=4]
-[ext_resource path="res://Game/Src/Actors/AI.gd" type="Script" id=5]
+[ext_resource path="res://game/assets/temp/tilesheet_transparent.png" type="Texture" id=1]
+[ext_resource path="res://game/src/actors/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://game/src/actors/VisionCone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/src/actors/AI.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 4.0
@@ -27,9 +26,11 @@ region_enabled = true
 region_rect = Rect2( 479, 36, 8, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 4 )
 
 [node name="BodyChecker" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 7
 input_pickable = false
@@ -37,18 +38,9 @@ input_pickable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyChecker"]
 shape = SubResource( 3 )
 
-[node name="VisionCone" type="Area2D" parent="."]
-collision_layer = 0
-monitorable = false
-script = ExtResource( 4 )
+[node name="VisionCone" parent="." instance=ExtResource( 3 )]
+scale = Vector2( 0.75, 0.75 )
 
-[node name="VCone" type="Sprite" parent="VisionCone"]
-show_behind_parent = true
-position = Vector2( 31, -1 )
-texture = ExtResource( 3 )
+[connection signal="body_entered" from="BodyChecker" to="." method="_on_BodyChecker_body_entered"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
-polygon = PoolVector2Array( 50, -20, 56, -2, 50, 20, 6, 5, 6, -6 )
-
-[connection signal="body_entered" from="BodyChecker" to="AI" method="_on_BodyChecker_body_entered"]
-[connection signal="body_entered" from="VisionCone" to="VisionCone" method="_on_VisionCone_body_entered"]
+[editable path="VisionCone"]
