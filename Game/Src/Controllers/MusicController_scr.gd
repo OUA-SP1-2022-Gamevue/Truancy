@@ -33,6 +33,21 @@ func _play():
 #other than repeat _currentTrack
 func progressQueue():
 	##to be called once current playback ends, progress to next song in queue
+	#Will also be called if we've just been muted, in such cases we will advance the queue reguardless
+	
+	#Checking if there's something in the queue
+	if _queuedTrack != "":
+		#if so move it to _currentTrack...
+		_currentTrack = _queuedTrack
+		#and clear the queue
+		_queuedTrack = ""
+		#now call _play, it'll handle if we're muted
+		_play()
+	#otherwise, if we have a current track, play the current track
+	#(this gives us looping back, which we need to disable on a per-file basis, otherwise the audio player won't fire us a signal)
+	elif _currentTrack != "":
+		_play()
+	#just in case we don't have anything availble:
 	pass
 	
 	
@@ -56,7 +71,7 @@ func queueTrack( nextTrack : String ):
 		_play()
 
 #We clear the queue, and play the track we were passed
-func PlayTrack( nextTrack : String ):
+func playTrack( nextTrack : String ):
 	_queuedTrack = ""
 	_currentTrack = nextTrack
 	_play()

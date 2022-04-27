@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/src/actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/assets/temp/BackgroundTileMap.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://game/assets/temp/ForegroundTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/src/user_interface/UserInterface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/src/Main.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.5, 21.5 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -117,3 +120,13 @@ tile_data = PoolIntArray( -65489, 2, 65542, -65488, 2, 2, -65487, 2, 2, -65486, 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 31, 33 )
 speed = 96
+
+[node name="ZoneDetector" type="Node" parent="."]
+
+[node name="Zone1Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone1" type="CollisionShape2D" parent="ZoneDetector/Zone1Detector"]
+position = Vector2( 116, 32 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="ZoneDetector/Zone1Detector" to="." method="_Zone1Detector_body_entered"]
