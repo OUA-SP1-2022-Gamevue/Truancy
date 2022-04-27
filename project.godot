@@ -36,6 +36,10 @@ config/name="Truancy"
 run/main_scene="res://game/src/screens/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicController="*res://Game/Src/Controllers/MusicController.tscn"
+
 [display]
 
 window/size/width=384
