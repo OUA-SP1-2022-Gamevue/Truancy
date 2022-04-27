@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game/assets/temp/tilesheet_transparent.png" type="Texture" id=1]
-[ext_resource path="res://game/src/actors/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Game/Src/Actors/Enemy_scr.gd" type="Script" id=2]
 [ext_resource path="res://game/src/actors/VisionCone.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/src/actors/AI.gd" type="Script" id=5]
+[ext_resource path="res://Game/Src/Actors/AI_scr.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 4.0

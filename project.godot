@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "AI",
 "language": "GDScript",
-"path": "res://game/src/actors/AI.gd"
+"path": "res://Game/Src/Actors/AI_scr.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://game/src/actors/Enemy.gd"
+"path": "res://Game/Src/Actors/Enemy_scr.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://game/src/actors/Player.gd"
+"path": "res://Game/Src/Actors/Player_scr.gd"
 } ]
 _global_script_class_icons={
 "AI": "",
