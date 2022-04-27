@@ -66,6 +66,22 @@ position = Vector2( 23, 101 )
 [node name="Position2D4" type="Position2D" parent="Enemies/Enemy2"]
 position = Vector2( 23, 0 )
 
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 65, 291 )
+state = 2
+
+[node name="Position2D" type="Position2D" parent="Enemies/Enemy9"]
+position = Vector2( -33, 0 )
+
+[node name="Position2D2" type="Position2D" parent="Enemies/Enemy9"]
+position = Vector2( -37, 202 )
+
+[node name="Position2D3" type="Position2D" parent="Enemies/Enemy9"]
+position = Vector2( 29, 202 )
+
+[node name="Position2D4" type="Position2D" parent="Enemies/Enemy9"]
+position = Vector2( 27, 0 )
+
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 355, 189 )
 direction = 3
