@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MusicController.queueTrack("res://Game/Assets/Audio/menu.mp3")
+	MusicController.queueTrack("res://Game/Assets/Audio/Level1S0.mp3")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

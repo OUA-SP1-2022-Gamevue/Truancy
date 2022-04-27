@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Level1S3.mp3-7424aabe93ba84c7abf1c888adb1e4fe.mp3str"
+
+[deps]
+
+source_file="res://Game/Assets/Audio/Level1S3.mp3"
+dest_files=[ "res://.import/Level1S3.mp3-7424aabe93ba84c7abf1c888adb1e4fe.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
