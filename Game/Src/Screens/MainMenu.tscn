@@ -57,7 +57,7 @@ margin_bottom = 68.0
 margin_top = 72.0
 margin_right = 154.0
 margin_bottom = 104.0
-text = "MuteTest"
+text = "Mute"
 script = ExtResource( 6 )
 
 [connection signal="button_up" from="SelectMenu/MutePlaceholder" to="SelectMenu/MutePlaceholder" method="_on_button_up"]
