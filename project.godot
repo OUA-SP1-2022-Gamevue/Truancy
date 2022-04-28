@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "AI",
 "language": "GDScript",
-"path": "res://Game/Src/Actors/AI_scr.gd"
+"path": "res://game/src/actors/AI_scr.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Game/Src/Actors/Enemy_scr.gd"
+"path": "res://game/src/actors/Enemy_scr.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Reference",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Game/Src/Actors/Player_scr.gd"
+"path": "res://game/src/actors/Player_scr.gd"
 } ]
 _global_script_class_icons={
 "AI": "",
@@ -123,6 +123,7 @@ pause={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Wall"
+2d_physics/layer_4="Crouch"
 
 [physics]
 

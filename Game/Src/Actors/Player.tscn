@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Game/Src/Actors/Player_scr.gd" type="Script" id=1]
+[ext_resource path="res://game/src/actors/Player_scr.gd" type="Script" id=1]
 [ext_resource path="res://game/assets/temp/tilesheet_transparent.png" type="Texture" id=2]
 [ext_resource path="res://game/assets/temp/footstep_wood_004.ogg" type="AudioStream" id=3]
 
@@ -9,7 +9,7 @@ radius = 3.0
 height = 6.0
 
 [node name="Player" type="KinematicBody2D"]
-collision_mask = 6
+collision_mask = 4
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -18,7 +18,6 @@ region_enabled = true
 region_rect = Rect2( 479, 19, 8, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""

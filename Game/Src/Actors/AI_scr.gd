@@ -25,8 +25,11 @@ var position_array: = PoolVector2Array()
 var amount_of_targets: = 0
 var current_target: = 0
 
+onready var raycasts: = $Raycasts.get_children()
+
 
 func _physics_process(_delta: float) -> void:
+	handle_raycasts()
 	match state:
 		#Tells the actor to move if it's in the Patrol state.
 		PATROL:
@@ -65,15 +68,16 @@ func initialise(new_actor: KinematicBody2D):
 
 #Flips the direction to the opposite one.
 func flip_direction():
-	match direction:
-		Direction.DOWN:
-			direction = Direction.UP
-		Direction.UP:
-			direction = Direction.DOWN
-		Direction.RIGHT:
-			direction = Direction.LEFT
-		Direction.LEFT:
-			direction = Direction.RIGHT
+	if state != IDLE:
+		match direction:
+			Direction.DOWN:
+				direction = Direction.UP
+			Direction.UP:
+				direction = Direction.DOWN
+			Direction.RIGHT:
+				direction = Direction.LEFT
+			Direction.LEFT:
+				direction = Direction.RIGHT
 
 
 #not a fan of this implementation can probably merge this with the patrol range
@@ -84,22 +88,26 @@ func handle_direction_state():
 			velocity.x = 1
 			var new_vector: Vector2 = actor.position
 			new_vector.x += 10
-			actor.rotate_toward(new_vector)
+			var rotation_speed = 0.1 if state != IDLE else 1.0
+			actor.rotate_toward(new_vector,rotation_speed)
 		Direction.LEFT:
 			velocity.x = -1
 			var new_vector: Vector2 = actor.position
 			new_vector.x -= 10
-			actor.rotate_toward(new_vector)
+			var rotation_speed = 0.1 if state != IDLE else 1.0
+			actor.rotate_toward(new_vector,rotation_speed)
 		Direction.DOWN:
 			velocity.y = 1
 			var new_vector: Vector2 = actor.position
 			new_vector.y += 10
-			actor.rotate_toward(new_vector)
+			var rotation_speed = 0.1 if state != IDLE else 1.0
+			actor.rotate_toward(new_vector,rotation_speed)
 		Direction.UP:
 			velocity.y = -1
 			var new_vector: Vector2 = actor.position
 			new_vector.y -= 10
-			actor.rotate_toward(new_vector)
+			var rotation_speed = 0.1 if state != IDLE else 1.0
+			actor.rotate_toward(new_vector,rotation_speed)
 		_:
 			print(actor)
 			print("has entered an invalid direction.")
@@ -122,6 +130,14 @@ func check_if_end_of_patrol_range():
 func set_state(new_state: int) -> void:
 	state = new_state
 
+
+func handle_raycasts():
+	for ray in raycasts:
+		if ray.is_colliding():
+			if ray.get_collider() is Player:
+				var target = ray.get_collider()
+				if target.has_method("lose_game"):
+					target.lose_game()
 
 #This function calls the flip_direction function.
 #when the enemy collides with a wall or another enemy.

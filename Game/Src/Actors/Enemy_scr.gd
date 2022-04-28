@@ -22,8 +22,8 @@ func _ready():
 	ai.initialise(self)
 
 
-func rotate_toward(location: Vector2):
-	rotation = lerp_angle(rotation, global_position.direction_to(location).angle(),0.1)
+func rotate_toward(location: Vector2, rotate_speed: float = 0.1):
+	rotation = lerp_angle(rotation, global_position.direction_to(location).angle(),rotate_speed)
 
 
 func vector_speed_toward(location: Vector2) -> Vector2:

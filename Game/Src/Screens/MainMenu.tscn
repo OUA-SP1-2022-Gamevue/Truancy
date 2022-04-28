@@ -48,16 +48,16 @@ margin_bottom = 32.0
 text = "Play!"
 next_scene = "res://Game/Src/Levels/TestLevel.tscn"
 
-[node name="QuitButton" parent="SelectMenu" instance=ExtResource( 3 )]
+[node name="MutePlaceholder" type="Button" parent="SelectMenu"]
 margin_top = 36.0
 margin_right = 154.0
 margin_bottom = 68.0
+text = "Mute"
+script = ExtResource( 6 )
 
-[node name="MutePlaceholder" type="Button" parent="SelectMenu"]
+[node name="QuitButton" parent="SelectMenu" instance=ExtResource( 3 )]
 margin_top = 72.0
 margin_right = 154.0
 margin_bottom = 104.0
-text = "Mute"
-script = ExtResource( 6 )
 
 [connection signal="button_up" from="SelectMenu/MutePlaceholder" to="SelectMenu/MutePlaceholder" method="_on_button_up"]
