@@ -11,13 +11,13 @@
 extents = Vector2( 125, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 125.5, 122 )
+extents = Vector2( 128, 103.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 238.5, 114 )
+extents = Vector2( 256.5, 104 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 16, 38.5 )
+extents = Vector2( 16, 80.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 96.5, 280.5 )
@@ -144,19 +144,19 @@ shape = SubResource( 1 )
 [node name="Zone2Detector" type="Area2D" parent="ZoneDetector"]
 
 [node name="Zone2" type="CollisionShape2D" parent="ZoneDetector/Zone2Detector"]
-position = Vector2( 135.5, 171 )
+position = Vector2( 133, 152.5 )
 shape = SubResource( 2 )
 
 [node name="Zone3Detector" type="Area2D" parent="ZoneDetector"]
 
 [node name="Zone3" type="CollisionShape2D" parent="ZoneDetector/Zone3Detector"]
-position = Vector2( 354.5, 430 )
+position = Vector2( 336.5, 440 )
 shape = SubResource( 3 )
 
 [node name="Zone4Detector" type="Area2D" parent="ZoneDetector"]
 
 [node name="Zone4" type="CollisionShape2D" parent="ZoneDetector/Zone4Detector"]
-position = Vector2( 32, 425.5 )
+position = Vector2( 32, 383.5 )
 shape = SubResource( 4 )
 
 [node name="Zone0Detector" type="Area2D" parent="ZoneDetector"]

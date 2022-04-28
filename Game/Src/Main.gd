@@ -36,7 +36,7 @@ func _Zone3Detector_body_entered(body):
 
 func _Zone4Detector_body_entered(body):
 	if body is Player:
-		MusicController.playTrack("res://Game/Assets/Audio/Level1S4.mp3")
+		MusicController.queueTrack("res://Game/Assets/Audio/Level1S4.mp3")
 	pass # Replace with function body.
 
 
