@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/src/actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/assets/temp/BackgroundTileMap.tscn" type="PackedScene" id=2]
@@ -6,6 +6,21 @@
 [ext_resource path="res://game/assets/temp/ForegroundTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/src/user_interface/UserInterface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/src/Main.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 125, 18.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128, 103.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 256.5, 104 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 80.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 96.5, 280.5 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -133,3 +148,41 @@ tile_data = PoolIntArray( -65489, 2, 65542, -65488, 2, 2, -65487, 2, 2, -65486, 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 31, 33 )
 speed = 96
+
+[node name="ZoneDetector" type="Node" parent="."]
+
+[node name="Zone1Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone1" type="CollisionShape2D" parent="ZoneDetector/Zone1Detector"]
+position = Vector2( 136, 29.5 )
+shape = SubResource( 1 )
+
+[node name="Zone2Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone2" type="CollisionShape2D" parent="ZoneDetector/Zone2Detector"]
+position = Vector2( 133, 152.5 )
+shape = SubResource( 2 )
+
+[node name="Zone3Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone3" type="CollisionShape2D" parent="ZoneDetector/Zone3Detector"]
+position = Vector2( 336.5, 440 )
+shape = SubResource( 3 )
+
+[node name="Zone4Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone4" type="CollisionShape2D" parent="ZoneDetector/Zone4Detector"]
+position = Vector2( 32, 383.5 )
+shape = SubResource( 4 )
+
+[node name="Zone0Detector" type="Area2D" parent="ZoneDetector"]
+
+[node name="Zone0" type="CollisionShape2D" parent="ZoneDetector/Zone0Detector"]
+position = Vector2( 848.5, 280.5 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="ZoneDetector/Zone1Detector" to="." method="_Zone1Detector_body_entered"]
+[connection signal="body_entered" from="ZoneDetector/Zone2Detector" to="." method="_Zone2Detector_body_entered"]
+[connection signal="body_entered" from="ZoneDetector/Zone3Detector" to="." method="_Zone3Detector_body_entered"]
+[connection signal="body_entered" from="ZoneDetector/Zone4Detector" to="." method="_Zone4Detector_body_entered"]
+[connection signal="body_entered" from="ZoneDetector/Zone0Detector" to="." method="_Zone0Detector_body_entered"]

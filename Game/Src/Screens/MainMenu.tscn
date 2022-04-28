@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game/assets/temp/TitleFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://game/src/user_interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/src/user_interface/QuitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/assets/temp/DefaultTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Game/Src/Screens/MainMenu_scr.gd" type="Script" id=5]
+[ext_resource path="res://Game/Src/user_interface/MutePlaceholder.gd" type="Script" id=6]
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -49,3 +52,12 @@ next_scene = "res://Game/Src/Levels/TestLevel.tscn"
 margin_top = 36.0
 margin_right = 154.0
 margin_bottom = 68.0
+
+[node name="MutePlaceholder" type="Button" parent="SelectMenu"]
+margin_top = 72.0
+margin_right = 154.0
+margin_bottom = 104.0
+text = "Mute"
+script = ExtResource( 6 )
+
+[connection signal="button_up" from="SelectMenu/MutePlaceholder" to="SelectMenu/MutePlaceholder" method="_on_button_up"]
