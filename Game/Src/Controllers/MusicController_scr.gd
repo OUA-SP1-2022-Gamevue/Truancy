@@ -49,11 +49,6 @@ func progressQueue():
 		_play()
 	#just in case we don't have anything availble:
 	pass
-	
-	
-	
-
-
 
 ##External Functions:
 #These are the only things we want to expose to the outside world, to make things nice and clean.
@@ -76,24 +71,17 @@ func playTrack( nextTrack : String ):
 	_currentTrack = nextTrack
 	_play()
 
-
-
-
-	
 #does exactly what it says on the box
 func stop():
 	_player.stop()
 
-	
 #External Mute access
-
 #If something calls this, it mutes itself instantly
 func mute():
 	_isMuted = true
 	stop()
 
 #Toggle's mute. Slightly redundant, but this one is too sleepy to determine what is needed, please ignore it.
-
 func toggleMute():
 	#Invert the mute bool
 	_isMuted = !_isMuted
@@ -115,17 +103,13 @@ func toggleMute():
 #returns a bool for easy access
 func areWeMuted() -> bool:
 	return _isMuted
-	
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Not sure if there's anything to use this for, but can't hurt to have it
 	#we are currently dependant on the first scene that loads to kick things off,
 	#or anything else that happens to have the occasion to queue some audio
-	
-	
+
 
 #If anyone needs to use the following, you're doing it wrong:
 

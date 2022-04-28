@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Level1S1.mp3-93ae1fffc5d1109bc1efbd7eb86c683b.mp3str"
+path="res://.import/Level1S1.mp3-d60d806d780b231edfd4fe01672bfbc9.mp3str"
 
 [deps]
 
-source_file="res://Game/Assets/Audio/Level1S1.mp3"
-dest_files=[ "res://.import/Level1S1.mp3-93ae1fffc5d1109bc1efbd7eb86c683b.mp3str" ]
+source_file="res://game/assets/Audio/Level1S1.mp3"
+dest_files=[ "res://.import/Level1S1.mp3-d60d806d780b231edfd4fe01672bfbc9.mp3str" ]
 
 [params]
 
