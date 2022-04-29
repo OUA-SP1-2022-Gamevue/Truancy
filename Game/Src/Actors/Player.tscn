@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://game/src/actors/Player_scr.gd" type="Script" id=1]
+[ext_resource path="res://game/src/actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://game/assets/temp/tilesheet_transparent.png" type="Texture" id=2]
 [ext_resource path="res://game/assets/temp/footstep_wood_004.ogg" type="AudioStream" id=3]
 

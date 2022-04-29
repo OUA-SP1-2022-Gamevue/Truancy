@@ -4,7 +4,7 @@
 [ext_resource path="res://game/src/user_interface/ChangeSceneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/src/user_interface/QuitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/assets/temp/DefaultTheme.tres" type="Theme" id=4]
-[ext_resource path="res://Game/Src/Screens/MainMenu_scr.gd" type="Script" id=5]
+[ext_resource path="res://game/src/screens/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://Game/Src/user_interface/MutePlaceholder.gd" type="Script" id=6]
 
 [node name="MainMenu" type="Control"]
