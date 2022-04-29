@@ -9,20 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Reference",
 "class": "AI",
 "language": "GDScript",
-"path": "res://game/src/actors/AI.gd"
+"path": "res://src/actors/AI.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Reference",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://game/src/actors/Enemy_scr.gd"
+"path": "res://src/actors/Enemy_scr.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://game/src/actors/Player.gd"
+"path": "res://src/actors/Player.gd"
 } ]
 _global_script_class_icons={
 "AI": "",
@@ -33,12 +33,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Truancy"
-run/main_scene="res://game/src/screens/MainMenu.tscn"
+run/main_scene="res://src/screens/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-MusicController="*res://Game/Src/Controllers/MusicController.tscn"
+MusicController="*res://src/controllers/MusicController.tscn"
 
 [display]
 
@@ -82,6 +82,10 @@ texture={
 "svg/scale": 1.0
 }
 ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
+mp3={
 "loop": false,
 "loop_offset": 0
 }

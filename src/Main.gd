@@ -18,29 +18,29 @@ func _Zone1Detector_body_entered(body):
 	#Checking if the thing that collided is the player
 	if body is Player:
 		#if so, let's queue up music for Zone1
-		MusicController.queueTrack("res://Game/Assets/Audio/Level1S1.mp3")
-	pass # Replace with function body.
+		MusicController.queueTrack("res://assets/audio/Level1S1.mp3")
+
 
 #Same, for all other zones
 func _Zone2Detector_body_entered(body):
 	if body is Player:
-		MusicController.queueTrack("res://Game/Assets/Audio/Level1S2.mp3")
-	pass # Replace with function body.
+		MusicController.queueTrack("res://assets/audio/Level1S2.mp3")
+
 
 
 func _Zone3Detector_body_entered(body):
 	if body is Player:
-		MusicController.queueTrack("res://Game/Assets/Audio/Level1S3.mp3")
-	pass # Replace with function body.
+		MusicController.queueTrack("res://assets/audio/Level1S3.mp3")
+
 
 
 func _Zone4Detector_body_entered(body):
 	if body is Player:
-		MusicController.queueTrack("res://Game/Assets/Audio/Level1S4.mp3")
-	pass # Replace with function body.
+		MusicController.queueTrack("res://assets/audio/Level1S4.mp3")
+
 
 
 func _Zone0Detector_body_entered(body):
 	if body is Player:
-		MusicController.queueTrack("res://Game/Assets/Audio/Level1S0.mp3")
-	pass # Replace with function body.
+		MusicController.queueTrack("res://assets/audio/Level1S0.mp3")
+
